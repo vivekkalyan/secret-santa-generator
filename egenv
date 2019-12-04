@@ -1,0 +1,5 @@
+SMTPSERVER='smtp.fastmail.com'
+SENDER='youremail'
+USERS='["email1","email2","email3"]'
+USERNAME="yourusername"
+PASSWORD="yourapppassword"
