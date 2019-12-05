@@ -17,12 +17,14 @@ PASSWORD = os.getenv("PASSWORD")
 n_users = len(USERS)
 available = set(range(n_users))
 random.shuffle(USERS)
-choices = []
-for i, user in enumerate(USERS):
-    temp_available = available - set([i])
-    choice = random.choice(list(temp_available))
-    available = available - set([choice])
-    choices.append(choice)
+# choices = []
+# for i, user in enumerate(USERS):
+#     temp_available = available - set([i])
+#     choice = random.choice(list(temp_available))
+#     available = available - set([choice])
+#     choices.append(choice)
+# prevent isntances where last person is left with themselves
+choices = list(map(lambda a: (a+1)%n_users), USERS)
 
 subject="Your Santa"
 text_subtype = 'plain'
